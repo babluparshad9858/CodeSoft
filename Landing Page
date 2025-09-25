@@ -1,0 +1,335 @@
+## HTML CODE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>PrimeTick - Smart Digital Watch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container container">
+      <div class="logo">PrimeTick</div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-section" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+      <div class="hero-content" style="max-width: 520px; text-align: left;">
+        <h1 class="hero-title">Smart Digital Watch For Luxurious Life</h1>
+        <p class="hero-desc">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+        <a href="#" class="cta-button">Buy Products</a>
+      </div>
+      <img src="watch1.jpg" alt="Smart Watch" class="hero-image" style="max-width: 320px; width: 100%; border-radius: 24px; box-shadow: 0 8px 32px rgba(255,87,34,0.10); margin-top: 24px;">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Product Features</h2>
+    <p class="section-desc">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-title">High Quality</div>
+        <div class="feature-desc">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💡</div>
+        <div class="feature-title">Awesome Design</div>
+        <div class="feature-desc">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚙️</div>
+        <div class="feature-title">Latest Technology</div>
+        <div class="feature-desc">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👍</div>
+        <div class="feature-title">User Friendly</div>
+        <div class="feature-desc">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section product-section">
+    <img src="WtachVideo.jpg" alt="Smart Watch" class="product-image">
+    <div class="product-details">
+      <h3>About The Product</h3>
+      <ul>
+        <li>Model No #24SCSE2030039 Primemart</li>
+        <li>Camera Resolution 24 Mega Pixel</li>
+        <li>Image Processor Snapdragon lite</li>
+        <li>Effective Pixels Approx. 24.20 megapixels</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      &copy; 2025 PrimeTick. All rights reserved.
+    </div>
+    <br>
+    <div class="footer-container">
+      Page is created by Bablu Parshad.
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
+## CSS CODE
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fdf6f3;
+  color: #222;
+}
+
+header {
+  background: #fff;
+  color: #222;
+  padding: 36px 0 24px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff5722;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+nav a:hover,
+nav .active {
+  color: #ff5722;
+  border-bottom: 2px solid #ff5722;
+}
+
+.hero {
+  background: linear-gradient(120deg, #fff6f0 60%, #ffe3d3 100%);
+  text-align: left;
+  padding: 64px 0 48px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+
+.hero-content {
+  max-width: 520px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 32px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 38px;
+  background: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(255,87,34,0.08);
+  transition: background 0.2s, color 0.2s;
+  border: none;
+}
+.cta-button:hover {
+  background: #fff;
+  color: #ff5722;
+  border: 1px solid #ff5722;
+}
+
+.hero-image {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(255,87,34,0.10);
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 0 32px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.section-desc {
+  text-align: center;
+  color: #666;
+  margin-bottom: 36px;
+  font-size: 1.1rem;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(255,87,34,0.06);
+  padding: 32px 24px;
+  text-align: center;
+  width: 220px;
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s;
+}
+.feature-card:hover {
+  box-shadow: 0 8px 32px rgba(255,87,34,0.13);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #ff5722;
+  margin-bottom: 12px;
+}
+
+.feature-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.feature-desc {
+  color: #666;
+  font-size: 1rem;
+}
+
+.product-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.product-image {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(255,87,34,0.10);
+}
+
+.product-details {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(255,87,34,0.06);
+  padding: 32px 28px;
+  min-width: 320px;
+}
+
+.product-details h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.product-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-details li {
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 1rem;
+  padding-left: 18px;
+  position: relative;
+}
+
+.product-details li:before {
+  content: "✔";
+  color: #ff5722;
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+}
+
+footer {
+  background: #fff;
+  color: #888;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 1rem;
+  border-top: 1px solid #eee;
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .hero, .product-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .product-details {
+    min-width: unset;
+  }
+  .features {
+    gap: 18px;
+  }
+}
