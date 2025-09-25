@@ -1,0 +1,182 @@
+Calculator using Java
+
+## HTML CODE: 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css"> <!-- Linking CSS -->
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>/</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>*</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>-</button>
+      <button>0</button>
+      <button>C</button>
+      <button>=</button>
+      <button>+</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script> <!-- Linking JS -->
+</body>
+</html>
+
+const display = document.getElementById("display");
+const buttons = document.querySelectorAll("button");
+
+let currentInput = "";
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const value = button.textContent;
+
+    if (value === "C") {
+      currentInput = "";
+      display.value = "";
+    } 
+    else if (value === "=") {
+      try {
+        currentInput = eval(currentInput); 
+        display.value = currentInput;
+      } catch {
+        display.value = "Error";
+        currentInput = "";
+      }
+    } 
+    else {
+      currentInput += value;
+      display.value = currentInput;
+    }
+  });
+});
+
+
+## CSS CODE: 
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #232526, #414345);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.calculator {
+  background: #18191a;
+  padding: 32px 24px 24px 24px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 332px;
+  box-sizing: border-box;
+}
+
+#display {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 26px;
+  text-align: right;
+  font-size: 2rem;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: none;
+  background: #232526;
+  color: #00ffe7;
+  box-shadow: 0 0 16px 2px #00ffe7, 0 2px 8px rgba(0,0,0,0.2) inset;
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+#display:focus {
+  box-shadow: 0 0 24px 4px #00ffe7, 0 2px 8px rgba(0,0,0,0.2) inset;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 16px;
+  align-content: space-between;
+  justify-content: space-around;
+}
+
+button {
+  height: 50px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: #232526;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00ffe7, 0 0 0 #00ffe7 inset;
+  transition: 
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.1s;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+button:hover,
+button:focus {
+  background: #232526;
+  box-shadow: 0 0 16px 4px #00ffe7, 0 0 0 #00ffe7 inset;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Operator buttons */
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16) {
+  background: #1a2980;
+  color: #fff;
+  box-shadow: 0 0 8px #00c6ff, 0 0 0 #00c6ff inset;
+}
+
+button:nth-child(4):hover,
+button:nth-child(8):hover,
+button:nth-child(12):hover,
+button:nth-child(16):hover {
+  box-shadow: 0 0 16px 4px #00c6ff, 0 0 0 #00c6ff inset;
+}
+
+## JAVASCRIPT CODE
+
+/* Special buttons: C and = */
+button:nth-child(14) {
+  background: #ff512f;
+  color: #fff;
+  box-shadow: 0 0 8px #ff512f, 0 0 0 #ff512f inset;
+}
+button:nth-child(14):hover {
+  box-shadow: 0 0 16px 4px #ff512f, 0 0 0 #ff512f inset;
+}
+
+button:nth-child(15) {
+  background: #00b09b;
+  color: #fff;
+  box-shadow: 0 0 8px #00b09b, 0 0 0 #00b09b inset;
+}
+button:nth-child(15):hover {
+  box-shadow: 0 0 16px 4px #00b09b, 0 0 0 #00b09b inset;
+}
