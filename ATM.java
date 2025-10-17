@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// Class to represent the user's bank account
 class BankAccount {
     private double balance;
     private String pin;
     private ArrayList<String> transactionHistory;
-    private String securityAnswer; // For PIN reset
+    private String securityAnswer; 
 
     public BankAccount(double initialBalance, String pin, String securityAnswer) {
         this.balance = Math.max(initialBalance, 0);
@@ -15,12 +14,10 @@ class BankAccount {
         this.transactionHistory = new ArrayList<>();
     }
 
-    // Authenticate user
     public boolean authenticate(String inputPin) {
         return this.pin.equals(inputPin);
     }
 
-    // Reset PIN after security verification
     public boolean resetPIN(String answer, String newPIN) {
         if (this.securityAnswer.equals(answer.toLowerCase())) {
             this.pin = newPIN;
@@ -30,7 +27,6 @@ class BankAccount {
         }
     }
 
-    // Deposit money
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -41,7 +37,6 @@ class BankAccount {
         }
     }
 
-    // Withdraw money
     public void withdraw(double amount) {
         if (amount <= 0) {
             System.out.println("❌ Withdrawal amount must be greater than zero.");
@@ -54,12 +49,9 @@ class BankAccount {
         }
     }
 
-    // Check balance
     public void checkBalance() {
         System.out.printf("💰 Current balance: $%.2f\n", balance);
     }
-
-    // Show transaction history
     public void showTransactionHistory() {
         if (transactionHistory.isEmpty()) {
             System.out.println("📄 No transactions yet.");
@@ -72,7 +64,6 @@ class BankAccount {
     }
 }
 
-// ATM class
 public class ATM {
     private BankAccount account;
     private Scanner sc;
@@ -82,13 +73,11 @@ public class ATM {
         sc = new Scanner(System.in);
     }
 
-    // Start ATM interface
     public void start() {
         System.out.println("===================================");
         System.out.println("       🏦 Welcome to ATM Machine");
         System.out.println("===================================");
 
-        // Authenticate user with PIN
         boolean authenticated = false;
         int pinAttempts = 0;
 
@@ -98,7 +87,7 @@ public class ATM {
 
             if (input.equalsIgnoreCase("forgot")) {
                 handleForgotPIN();
-                continue; // Retry PIN authentication after reset
+                continue; 
             }
 
             if (account.authenticate(input)) {
@@ -155,7 +144,6 @@ public class ATM {
         }
     }
 
-    // Handle PIN reset
     private void handleForgotPIN() {
         System.out.print("To reset your PIN, answer the security question.\nWhat is your favorite color? ");
         String answer = sc.next();
@@ -178,7 +166,6 @@ public class ATM {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Set initial PIN and security question
         System.out.println("===================================");
         System.out.println("       🏦 Welcome to ATM Machine");
         System.out.println("===================================");
@@ -194,7 +181,6 @@ public class ATM {
         System.out.print("Set answer for security question (What is your favorite color?): ");
         String securityAnswer = sc.next();
 
-        // Create bank account with $1000 initial balance
         BankAccount myAccount = new BankAccount(1000.0, pin, securityAnswer);
 
         ATM atm = new ATM(myAccount);
@@ -203,3 +189,4 @@ public class ATM {
         sc.close();
     }
 }
+
